@@ -6,11 +6,11 @@ if(!$con)
 {
         die('Connection Failed'.mysqli_error());
 }
-if(!mysqli_select_db($con,'forum')){
+if(!mysqli_select_db($db,'forum')){
     echo "Database not selected";
 }
 
-$result=mysqli_query($con,"select * from fm_login");
+$result=mysqli_query($db,"select * from fm_login");
 while($row=mysqli_fetch_array($result))
 {
     if($row["username"]==$f_usr && $row["password"]==$f_pswd)
